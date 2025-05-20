@@ -1,4 +1,4 @@
-package main
+package nse
 
 import (
 	"encoding/json"
