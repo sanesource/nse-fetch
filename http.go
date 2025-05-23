@@ -37,7 +37,6 @@ func request(method, url string, options NSEApiCallOptions) (map[string]any, err
 
 	// Step 3: API Request
 	req, reqErr := http.NewRequest(method, url, nil)
-	fmt.Printf("Making API Request - %s\n", url)
 	if reqErr != nil {
 		return nil, fmt.Errorf("failed to fetch: %s", url)
 	}
