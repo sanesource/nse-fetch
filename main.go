@@ -1,9 +1,19 @@
 package nse
 
-import "fmt"
+import (
+	"github.com/sanesource/nse-fetch/utils"
+)
 
 func FetchAutoComplete(symbol string) (map[string]any, error) {
-	url := fmt.Sprintf("https://www.nseindia.com/api/search/autocomplete?q=%s", symbol)
-	data, err := makeNSEApiCall("GET", url)
+	url := utils.GetNSEAutoCompletApiUrl(symbol)
+	data, err := request("GET", url, NSEApiCallOptions{})
+	return data, err
+}
+
+func FetchEquityHistorical(symbol, from, to string) (map[string]any, error) {
+	url := utils.GetNSEHistoricalApiUrl(symbol, from, to)
+	beforeApiFetchUrl := utils.GetNSEHistoricalPrefetchUrl(symbol)
+
+	data, err := request("GET", url, NSEApiCallOptions{beforeApiFetchUrl: beforeApiFetchUrl})
 	return data, err
 }
