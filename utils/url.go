@@ -13,3 +13,11 @@ func GetNSEHistoricalPrefetchUrl(symbol string) string {
 func GetNSEHistoricalApiUrl(symbol, from, to string) string {
 	return fmt.Sprintf("https://www.nseindia.com/api/historical/cm/equity?symbol=%s&series=[\"EQ\"]&from=%s&to=%s", symbol, from, to)
 }
+
+func GetNifty50PerformaceUrl() string {
+	return "https://www.nseindia.com/api/equity-stockIndices?index=NIFTY%2050"
+}
+
+func GetNifty50PerformacePrefetchUrl() string {
+	return "https://www.nseindia.com/market-data/top-gainers-losers"
+}

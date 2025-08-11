@@ -17,3 +17,10 @@ func TestFetchEquityHistorical(t *testing.T) {
 		t.Errorf("FetchEquityHistorical should not throw error: %v", err)
 	}
 }
+
+func TestFetchNifty50Performance(t *testing.T) {
+	_, err := FetchNifty50Performance()
+	if err != nil {
+		t.Errorf("FetchNifty50Performance should not throw error: %v", err)
+	}
+}
