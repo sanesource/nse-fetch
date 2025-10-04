@@ -39,6 +39,16 @@ go get -u github.com/sanesource/nse-fetch
 
 ## 📚 API Reference
 
+### Available Methods
+
+| Method                                                | Description                                                         |
+| ----------------------------------------------------- | ------------------------------------------------------------------- |
+| [`FetchAutoComplete`](#fetchautocomplete)             | Search for stock symbols and get instrument suggestions             |
+| [`FetchEquityHistorical`](#fetchequityhistorical)     | Retrieve historical stock data for a specific symbol and date range |
+| [`FetchNifty50Performance`](#fetchnifty50performance) | Get the latest performance data for Nifty 50 index and constituents |
+
+---
+
 ### FetchAutoComplete
 
 Search for stock symbols and get instrument suggestions.
