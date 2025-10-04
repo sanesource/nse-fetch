@@ -21,3 +21,15 @@ func GetNifty50PerformaceUrl() string {
 func GetNifty50PerformacePrefetchUrl() string {
 	return "https://www.nseindia.com/market-data/top-gainers-losers"
 }
+
+func GetTopGainersUrl() string {
+	return "https://www.nseindia.com/api/live-analysis-variations?index=gainers"
+}
+
+func GetTopLosersUrl() string {
+	return "https://www.nseindia.com/api/live-analysis-variations?index=loosers"
+}
+
+func GetTopGainersLosersPrefetchUrl() string {
+	return "https://www.nseindia.com/market-data/live-equity-market"
+}

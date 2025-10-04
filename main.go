@@ -23,3 +23,17 @@ func FetchNifty50Performance() (map[string]any, error) {
 	data, err := request("GET", url, NSEApiCallOptions{beforeApiFetchUrl: beforeApiFetchUrl})
 	return data, err
 }
+
+func FetchTopGainers() (map[string]any, error) {
+	url := utils.GetTopGainersUrl()
+	beforeApiFetchUrl := utils.GetTopGainersLosersPrefetchUrl()
+	data, err := request("GET", url, NSEApiCallOptions{beforeApiFetchUrl: beforeApiFetchUrl})
+	return data, err
+}
+
+func FetchTopLosers() (map[string]any, error) {
+	url := utils.GetTopLosersUrl()
+	beforeApiFetchUrl := utils.GetTopGainersLosersPrefetchUrl()
+	data, err := request("GET", url, NSEApiCallOptions{beforeApiFetchUrl: beforeApiFetchUrl})
+	return data, err
+}

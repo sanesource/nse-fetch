@@ -23,6 +23,7 @@
 - 🔍 **Auto-complete Search** - Find stock symbols and instruments quickly
 - 📊 **Historical Data** - Fetch historical equity data for any date range
 - 📈 **Nifty 50 Performance** - Get real-time data for Nifty 50 index and constituents
+- 📈 **Top Gainers & Losers** - Track the top performing and underperforming stocks
 - 🚀 **Zero Dependencies** - Uses only Go standard library
 - ⚡ **Fast & Lightweight** - Optimized for performance
 - 🔒 **Cookie Handling** - Automatically manages NSE session cookies
@@ -46,6 +47,8 @@ go get -u github.com/sanesource/nse-fetch
 | [`FetchAutoComplete`](#fetchautocomplete)             | Search for stock symbols and get instrument suggestions             |
 | [`FetchEquityHistorical`](#fetchequityhistorical)     | Retrieve historical stock data for a specific symbol and date range |
 | [`FetchNifty50Performance`](#fetchnifty50performance) | Get the latest performance data for Nifty 50 index and constituents |
+| [`FetchTopGainers`](#fetchtopgainers)                 | Fetch the top gaining stocks in the market                          |
+| [`FetchTopLosers`](#fetchtoplosers)                   | Fetch the top losing stocks in the market                           |
 
 ---
 
@@ -179,6 +182,94 @@ func main() {
 
     // Response structure: { "data": [...] }
     fmt.Printf("Nifty 50 data: %v\n", response)
+}
+```
+
+---
+
+### FetchTopGainers
+
+Fetch the top gaining stocks in the market.
+
+**Signature:**
+
+```go
+func FetchTopGainers() (map[string]any, error)
+```
+
+**Parameters:**
+
+- None
+
+**Returns:**
+
+- `map[string]any` - Response containing top gaining stocks data
+- `error` - Error if the request fails
+
+**Example:**
+
+```go
+package main
+
+import (
+    "fmt"
+    "log"
+
+    nse "github.com/sanesource/nse-fetch"
+)
+
+func main() {
+    response, err := nse.FetchTopGainers()
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Response structure: { "data": [...] }
+    fmt.Printf("Top Gainers: %v\n", response)
+}
+```
+
+---
+
+### FetchTopLosers
+
+Fetch the top losing stocks in the market.
+
+**Signature:**
+
+```go
+func FetchTopLosers() (map[string]any, error)
+```
+
+**Parameters:**
+
+- None
+
+**Returns:**
+
+- `map[string]any` - Response containing top losing stocks data
+- `error` - Error if the request fails
+
+**Example:**
+
+```go
+package main
+
+import (
+    "fmt"
+    "log"
+
+    nse "github.com/sanesource/nse-fetch"
+)
+
+func main() {
+    response, err := nse.FetchTopLosers()
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Response structure: { "data": [...] }
+    fmt.Printf("Top Losers: %v\n", response)
 }
 ```
 
